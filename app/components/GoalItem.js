@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 export default function GoalItem({ goal, removeGoal }) {
   return (
-    <View className="rounded">
-      <Text className="rounded p-3 text-white bg-[#444]" onPress={removeGoal}>
-        {goal}
-      </Text>
-    </View>
+    <Pressable onPress={removeGoal}>
+      <View className="rounded">
+        <Text className="rounded p-3 text-white bg-[#444]">{goal}</Text>
+      </View>
+    </Pressable>
   );
 }

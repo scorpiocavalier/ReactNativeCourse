@@ -5,8 +5,11 @@ export default function GoalInput({ addGoal }) {
   const [inputText, setInputText] = useState("");
 
   const onAddGoal = () => {
-    addGoal(inputText.trim());
-    setInputText("");
+    const goal = inputText.trim();
+    if (inputText.length) {
+      addGoal(goal);
+      setInputText("");
+    }
   };
 
   return (
