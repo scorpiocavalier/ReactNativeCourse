@@ -1,6 +1,6 @@
 import "../global.css";
 import { useState } from "react";
-import { Text, Button, ScrollView, View, Image } from "react-native";
+import { Button, ScrollView, View, Image } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
