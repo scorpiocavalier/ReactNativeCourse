@@ -16,9 +16,9 @@ export default function GoalInput({ addGoal, closeModal, isVisible }) {
 
   return (
     <Modal visible={isVisible} animationType="slide">
-      <View className="flex-1 justify-center gap-6 px-12">
+      <View className="flex-1 justify-center gap-6 px-12 bg-black">
         <TextInput
-          className="border border-[#ccc] p-3"
+          className="border border-[#ccc] p-3 bg-white"
           placeholder="Your goal"
           value={inputText}
           onChangeText={setInputText}
@@ -28,10 +28,10 @@ export default function GoalInput({ addGoal, closeModal, isVisible }) {
 
         <View className="flex-row gap-6">
           <View className="flex-auto">
-            <Button title="Add Goal" onPress={onAddGoal} />
+            <Button title="Add Goal" color="#b41f23" onPress={onAddGoal} />
           </View>
           <View className="flex-auto">
-            <Button title="Cancel" onPress={closeModal} />
+            <Button title="Cancel" color="#b41f23" onPress={closeModal} />
           </View>
         </View>
       </View>

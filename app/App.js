@@ -1,6 +1,6 @@
 import "../global.css";
 import { useState } from "react";
-import { Text, Button, ScrollView, View } from "react-native";
+import { Text, Button, ScrollView, View, Image } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
@@ -14,8 +14,13 @@ export default function App() {
     setGoals((currentGoals) => currentGoals.filter((_, i) => i !== index));
 
   return (
-    <View className="flex-1 pt-24 pb-6 px-5 gap-6">
-      <Text className="text-center text-3xl font-bold">My Goals</Text>
+    <View className="flex-1 py-12 px-5 gap-6 bg-[#b41f23]">
+      <View className="h-32 items-center">
+        <Image
+          source={require("../assets/performance-led.jpg")}
+          className="w-full h-full aspect-[3/2] rounded-lg"
+        />
+      </View>
 
       <ScrollView>
         <View className="gap-3">
@@ -25,8 +30,6 @@ export default function App() {
         </View>
       </ScrollView>
 
-      <Button title="Add Goal" onPress={() => setModalIsVisible(true)} />
-
       {modalIsVisible && (
         <GoalInput
           addGoal={addGoal}
@@ -34,6 +37,10 @@ export default function App() {
           isVisible={modalIsVisible}
         />
       )}
+
+      <View className="w-1/2 self-center">
+        <Button title="Add Goal" color="black" onPress={() => setModalIsVisible(true)} />
+      </View>
     </View>
   );
 }
