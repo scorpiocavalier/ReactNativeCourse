@@ -14,7 +14,7 @@ export default function App() {
     setGoals((currentGoals) => currentGoals.filter((_, i) => i !== index));
 
   return (
-    <View className="flex-1 py-12 px-5 gap-6 bg-[#b41f23]">
+    <View className="flex-1 py-12 px-5 gap-6">
       <View className="h-32 items-center">
         <Image
           source={require("../assets/performance-led.jpg")}
