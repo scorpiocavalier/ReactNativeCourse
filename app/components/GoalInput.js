@@ -5,13 +5,9 @@ export default function GoalInput({ addGoal, closeModal, isVisible }) {
   const [inputText, setInputText] = useState("");
 
   const onAddGoal = () => {
-    const goal = inputText.trim();
-
-    if (inputText.length) {
-      addGoal(goal);
-      setInputText("");
-      closeModal();
-    }
+    addGoal(inputText.trim());
+    setInputText("");
+    closeModal();
   };
 
   return (
@@ -28,7 +24,12 @@ export default function GoalInput({ addGoal, closeModal, isVisible }) {
 
         <View className="flex-row gap-6">
           <View className="flex-auto">
-            <Button title="Add Goal" color="#b41f23" onPress={onAddGoal} />
+            <Button
+              title="Add Goal"
+              color="#b41f23"
+              onPress={onAddGoal}
+              disabled={!inputText.length}
+            />
           </View>
           <View className="flex-auto">
             <Button title="Cancel" color="#b41f23" onPress={closeModal} />
